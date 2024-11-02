@@ -6,18 +6,15 @@ contract SimpleStorage {
         string Name;
         uint256 favoriteNumber;
     }
+    mapping(string => uint256) public stringToFavoriteNumber; // mapping people to their favorite numbers
     Person[] public listOfPeople;
     function AddPeople(string memory _Name, uint256 _favoriteNumber) public {
         Person memory Newperson = Person({Name : _Name,favoriteNumber: _favoriteNumber});
         listOfPeople.push(Newperson);
+        stringToFavoriteNumber[_Name] = _favoriteNumber;
     }
 
-    function retriveData(string memory _Name) public view returns(uint256) {
-        for (uint256 i = 0; i < listOfPeople.length; i++) {
-            if (keccak256(bytes(listOfPeople[i].Name)) == keccak256(bytes(_Name))) {
-                return listOfPeople[i].favoriteNumber;
-            }
-        }
-        revert("person NOT found");
+    function retreiveData(string memory _Name) public view returns(uint256) {
+        return stringToFavoriteNumber[_Name];
     }
 }
