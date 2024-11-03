@@ -1,7 +1,14 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.28; // solidity version, "pragma defines the solidity version that is going to be used"
+pragma solidity ^0.8.28; // solidity version, "pragma defines the solidity version that is going to be used"
 
 contract SimpleStorage {
+    uint256 myFavoriteNumber;
+    function store(uint256 _myFavoreiteNumber) public {
+        myFavoriteNumber = _myFavoreiteNumber;
+    }
+    function seeMyFavoriteNumber() public view returns (uint256){
+        return myFavoriteNumber;
+    }
     struct Person {
         string Name;
         uint256 favoriteNumber;
