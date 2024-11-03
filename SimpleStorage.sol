@@ -3,7 +3,7 @@ pragma solidity ^0.8.28; // solidity version, "pragma defines the solidity versi
 
 contract SimpleStorage {
     uint256 myFavoriteNumber;
-    function store(uint256 _myFavoreiteNumber) public {
+    function store(uint256 _myFavoreiteNumber) public virtual {
         myFavoriteNumber = _myFavoreiteNumber;
     }
     function seeMyFavoriteNumber() public view returns (uint256){

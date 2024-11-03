@@ -3,8 +3,9 @@ pragma solidity ^0.8.18;
 
 import {SimpleStorage} from "./SimpleStorage.sol";
 contract Storagefactory {
-    SimpleStorage public simpleStorage;
+    SimpleStorage[] public listOfSimplestorgaeContracts;
     function CreateSimpleStorageContract() public {
-        simpleStorage = new SimpleStorage();
+        SimpleStorage simpleStorageContract = new SimpleStorage();
+        listOfSimplestorgaeContracts.push(simpleStorageContract);
     }
 }
