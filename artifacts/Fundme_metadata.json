@@ -6,10 +6,68 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "ethAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "GetConversionRate",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "GetPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "GetVersion",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "fund",
 				"outputs": [],
 				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "minimumUSD",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -40,12 +98,20 @@
 		"remappings": []
 	},
 	"sources": {
-		"fundme.sol": {
-			"keccak256": "0x9b1e46309e448adabc262fe132415c8b0e5f98e41f2d543728480d232816299e",
+		"@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol": {
+			"keccak256": "0x257a8d28fa83d3d942547c8e129ef465e4b5f3f31171e7be4739a4c98da6b4f0",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8fcd4b13c5f27f4de27ebe2b148f37a351c658e0044e5cc0c487fc3fbd14ee7e",
-				"dweb:/ipfs/QmXBoSPQAuoZna5J4p9aVUFiMG4Q6DP5iaR62BP7x1RQHv"
+				"bzz-raw://6d39e11b1dc7b9b8ccdabbc9be442ab7cda4a81c748f57e316dcb1bcb4a28bf9",
+				"dweb:/ipfs/QmaG6vz6W6iEUBsbHSBob5mdcitYxWjoygxREHpsJHfWrS"
+			]
+		},
+		"fundme.sol": {
+			"keccak256": "0x464d673e4349161c10cc095ee0bafbd2cd9ed9d51176fb2ad0f113183f5882db",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f32f47c37c182cb9ceb6de8ee389f34e8d0262a9f1ea57619faded96c3585c46",
+				"dweb:/ipfs/QmQNWSYa8VuQuurMmn3gzTRxVPY3LFyqNDS463bQ8wauHD"
 			]
 		}
 	},
