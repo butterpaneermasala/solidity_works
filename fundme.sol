@@ -4,6 +4,11 @@ pragma solidity ^0.8.18;
 import {PriceConverter} from "./GetConversionRate.sol";
 
 contract Fundme {
+    address public owner;
+
+    constructor() {
+        owner = msg.sender;
+    }
 
     using PriceConverter for uint256;
     uint256 public minimumUSD = 5 * 1e18;
@@ -15,14 +20,14 @@ contract Fundme {
         AmountSentByFunder[msg.sender] = AmountSentByFunder[msg.sender] + msg.value;
     }
 
-    function Withdraw() public {
+    function Withdraw() public OnlyOwner {
         for (uint256 funderIndex = 0; funderIndex < Funders.length; funderIndex++) {
             address currentFunder = Funders[funderIndex];
             AmountSentByFunder[currentFunder] = 0;
         }
         Funders = new address[](0);
 
-        // //transer
+        // //tranfser
         // payable(msg.sender).transfer(address(this).balance);
 
         // //send
@@ -34,5 +39,9 @@ contract Fundme {
         require(callSuccess, "call failed");
     }
 
+    modifier OnlyOwner {
+        require(msg.sender == owner, "sender is NOT Onwer");
+        _;
+    }
     
 }
