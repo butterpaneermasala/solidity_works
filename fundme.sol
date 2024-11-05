@@ -15,5 +15,24 @@ contract Fundme {
         AmountSentByFunder[msg.sender] = AmountSentByFunder[msg.sender] + msg.value;
     }
 
+    function Withdraw() public {
+        for (uint256 funderIndex = 0; funderIndex < Funders.length; funderIndex++) {
+            address currentFunder = Funders[funderIndex];
+            AmountSentByFunder[currentFunder] = 0;
+        }
+        Funders = new address[](0);
+
+        // //transer
+        // payable(msg.sender).transfer(address(this).balance);
+
+        // //send
+        // bool sendSuccess = payable(msg.sender).send(address(this).balance);
+        // require(sendSuccess, "send failed");
+
+        //call
+        (bool callSuccess, ) = msg.sender.call{value: address(this).balance}("");
+        require(callSuccess, "call failed");
+    }
+
     
 }

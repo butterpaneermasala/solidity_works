@@ -26,6 +26,13 @@
 			},
 			{
 				"inputs": [],
+				"name": "Withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "fund",
 				"outputs": [],
 				"stateMutability": "payable",
@@ -89,11 +96,11 @@
 			]
 		},
 		"fundme.sol": {
-			"keccak256": "0xbc7a976e904eed3073540d0d07d499018cb1ac81051f8a93fafe5910baad5269",
+			"keccak256": "0x1a5ff6cc8250cf95fce03ffed0123fc4c5aceb6768950d6dd21aa74592f3556c",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://400f20591c064442667ce0747334bca84c02c184d69c0914d024e88e39cdd2b3",
-				"dweb:/ipfs/QmfXUYskaDL7hauMBKR65QhcuuEnMGRPGgGHYMP2ZVQA9Y"
+				"bzz-raw://a7aa957b89c93a057f875375cf1a06f854d050a24bc8cf40bc0a0962499c7026",
+				"dweb:/ipfs/QmSRrGVFbF9Ao1XckCERHRk3VcmkaztfNvw3i9mDcDJAKm"
 			]
 		}
 	},
